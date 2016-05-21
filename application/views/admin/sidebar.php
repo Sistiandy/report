@@ -10,6 +10,13 @@
                 </ul>
             </li>
 
+            <li><a><i class="fa fa-newspaper-o"></i> Laporan <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu" style="display: none">
+                    <li><a href="<?php echo site_url('admin/report') ?>">Daftar Laporan</a>
+                    </li>
+                </ul>
+            </li>
+
             <li><a><i class="fa fa-newspaper-o"></i> Posting <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu" style="display: none">
                     <li><a href="<?php echo site_url('admin/posts') ?>">Daftar Posting</a>
@@ -26,12 +33,14 @@
                 </ul>
             </li>
 
-            <li><a><i class="fa fa-users"></i> Pengguna <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu" style="display: none">
-                    <li><a href="<?php echo site_url('admin/user') ?>">Daftar Pengguna</a>
-                    </li>
-                </ul>
-            </li>
+            <?php if ($this->session->userdata('user_role') == 1) { ?>
+                <li><a><i class="fa fa-users"></i> Pengguna <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu" style="display: none">
+                        <li><a href="<?php echo site_url('admin/user') ?>">Daftar Pengguna</a>
+                        </li>
+                    </ul>
+                </li>
+            <?php } ?>
         </ul>
     </div>
 
